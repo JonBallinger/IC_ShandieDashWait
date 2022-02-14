@@ -1,7 +1,7 @@
 {
 	"Name":"Shandie Dash Wait",
 	"Version": "v1.0.",
-    "Includes" : "IC_ShandieDashWait_Component.ahk",
+    "Includes" : "IC_ShandieDashWait_Includes.ahk",
     "Author" : "JonBallinger",
     "Url" : "https://github.com/JonBallinger/IC_ShandieDashWait",
     "Info" : "This Addon allows you to configure Shandie's Dash Wait",
