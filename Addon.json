@@ -1,0 +1,14 @@
+{
+	"Name":"Shandie Dash Wait",
+	"Version": "v1.0.",
+    "Includes" : "IC_ShandieDashWait_Component.ahk",
+    "Author" : "JonBallinger",
+    "Url" : "https://github.com/JonBallinger/IC_ShandieDashWait",
+    "Info" : "This Addon allows you to configure Shandie's Dash Wait",
+    "Dependencies" : [
+        {
+            "Name":"Briv Gem Farm",
+            "Version":"v1.0."
+        }
+    ]
+}
