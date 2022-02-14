@@ -1,4 +1,6 @@
+IC_ShandieDashWait_ReloadSettings()
 
+g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" )
 
 GUIFunctions.AddTab("Shandie Dash Wait")
 
@@ -42,4 +44,25 @@ IC_ShandieDashWait_Refresh() {
     g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" )
     GuiControl,ICScriptHub:, OptionSettingCheck_ShandieDashWaitAtStart, % g_ShandieDashWaitUserSettings["ShandieDashWaitAtStart"]
     GuiControl,ICScriptHub:, OptionSettingCheck_ShandieDashWaitPostStack, % g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"]
+}
+
+IC_ShandieDashWait_ReloadSettings()
+{
+    g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" )
+    If !IsObject( g_ShandieDashWaitUserSettings )
+    {
+        g_ShandieDashWaitUserSettings := {}        
+        g_ShandieDashWaitUserSettings["WriteSettings"] := true
+    }
+    if ( g_ShandieDashWaitUserSettings["ShandieDashWaitAtStart"] == "" )
+        g_ShandieDashWaitUserSettings["ShandieDashWaitAtStart"] := 1
+
+    if ( g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"] == "" )
+        g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"] := 1
+    
+    if(g_ShandieDashWaitUserSettings["WriteSettings"] := true)
+    {
+        g_ShandieDashWaitUserSettings.Delete("WriteSettings")
+        g_SF.WriteObjectToJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" , g_ShandieDashWaitUserSettings )   
+    }     
 }
