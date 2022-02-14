@@ -45,5 +45,31 @@ class IC_ShandieDashWait_SharedFunctions_Class extends IC_BrivSharedFunctions_Cl
 }
 
 class IC_ShandieDashWait_GemFarm_Class extends IC_BrivGemFarm_Class
+{    
+}
+
+
+; tried with and without the extends
+class IC_ShandieDashWait_SharedData_Class ;extends IC_SharedData_Class
 {
+    ReloadShandieDashWaitSettings() {
+        MsgBox "Shandie settings reloaded"
+        g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" )
+        If !IsObject( g_ShandieDashWaitUserSettings )
+        {
+            g_ShandieDashWaitUserSettings := {}        
+            g_ShandieDashWaitUserSettings["WriteSettings"] := true
+        }
+        if ( g_ShandieDashWaitUserSettings["ShandieDashWaitAtStart"] == "" )
+            g_ShandieDashWaitUserSettings["ShandieDashWaitAtStart"] := 1
+
+        if ( g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"] == "" )
+            g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"] := 1
+        
+        if(g_ShandieDashWaitUserSettings["WriteSettings"] := true)
+        {
+            g_ShandieDashWaitUserSettings.Delete("WriteSettings")
+            g_SF.WriteObjectToJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" , g_ShandieDashWaitUserSettings )   
+        }
+    }
 }

@@ -30,7 +30,7 @@ IC_ShandieDashWait_SettingsSave(){
     try ; avoid thrown errors when comobject is not available.
     {
         local SharedRunData := ComObjActive("{416ABC15-9EFC-400C-8123-D7D8778A2103}")
-        SharedRunData.ReloadSettings("RefreshSettingsView")
+        SharedData.ReloadShandieDashWaitSettings()
     }
     return
 }
