@@ -1,6 +1,6 @@
 {
 	"Name":"Shandie Dash Wait",
-	"Version": "v1.0.",
+	"Version": "v1.0",
     "Includes" : "IC_ShandieDashWait_Includes.ahk",
     "Author" : "JonBallinger",
     "Url" : "https://github.com/JonBallinger/IC_ShandieDashWait",
@@ -8,7 +8,7 @@
     "Dependencies" : [
         {
             "Name":"Briv Gem Farm",
-            "Version":"v1.0."
+            "Version":"v1.0.1"
         }
     ]
 }
