@@ -15,8 +15,6 @@ Gui, ICScriptHub:Add, Checkbox, vOptionSettingCheck_ShandieDashWaitPostStack x15
 
 Gui, ICScriptHub:Add, Button , x10 y+10 gIC_ShandieDashWait_SettingsSave, Save
 
-Gui, ICScriptHub:Add, Text, x10 y+10, You will need to reload ScriptHub (and the BrivGemFarm if already running) for changes to take effect
-
 IC_ShandieDashWait_AddToolTips()
 IC_ShandieDashWait_Refresh()
 
@@ -30,7 +28,7 @@ IC_ShandieDashWait_SettingsSave(){
     try ; avoid thrown errors when comobject is not available.
     {
         local SharedRunData := ComObjActive("{416ABC15-9EFC-400C-8123-D7D8778A2103}")
-        SharedData.ReloadShandieDashWaitSettings()
+        SharedRunData.ReloadShandieDashWaitSettings()
     }
     return
 }

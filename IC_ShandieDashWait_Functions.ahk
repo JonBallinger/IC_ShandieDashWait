@@ -53,7 +53,7 @@ class IC_ShandieDashWait_GemFarm_Class extends IC_BrivGemFarm_Class
 class IC_ShandieDashWait_SharedData_Class ;extends IC_SharedData_Class
 {
     ReloadShandieDashWaitSettings() {
-        MsgBox "Shandie settings reloaded"
+        MsgBox, , , Shandie settings saved, 1
         g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\DashWaitSettings.json" )
         If !IsObject( g_ShandieDashWaitUserSettings )
         {
