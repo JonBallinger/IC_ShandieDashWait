@@ -1,6 +1,6 @@
 IC_ShandieDashWait_ReloadSettings()
 
-g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" )
+g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\DashWaitSettings.json" )
 
 GUIFunctions.AddTab("Shandie Dash Wait")
 
@@ -26,7 +26,7 @@ IC_ShandieDashWait_SettingsSave(){
     Gui, ICScriptHub:Submit, NoHide
     g_ShandieDashWaitUserSettings["ShandieDashWaitAtStart"] := OptionSettingCheck_ShandieDashWaitAtStart
     g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"] := OptionSettingCheck_ShandieDashWaitPostStack
-    g_SF.WriteObjectToJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" , g_ShandieDashWaitUserSettings )
+    g_SF.WriteObjectToJSON( A_LineFile . "\..\DashWaitSettings.json" , g_ShandieDashWaitUserSettings )
     try ; avoid thrown errors when comobject is not available.
     {
         local SharedRunData := ComObjActive("{416ABC15-9EFC-400C-8123-D7D8778A2103}")
@@ -41,14 +41,14 @@ IC_ShandieDashWait_AddToolTips() {
 }
 
 IC_ShandieDashWait_Refresh() {
-    g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" )
+    g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\DashWaitSettings.json" )
     GuiControl,ICScriptHub:, OptionSettingCheck_ShandieDashWaitAtStart, % g_ShandieDashWaitUserSettings["ShandieDashWaitAtStart"]
     GuiControl,ICScriptHub:, OptionSettingCheck_ShandieDashWaitPostStack, % g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"]
 }
 
 IC_ShandieDashWait_ReloadSettings()
 {
-    g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" )
+    g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\DashWaitSettings.json" )
     If !IsObject( g_ShandieDashWaitUserSettings )
     {
         g_ShandieDashWaitUserSettings := {}        
@@ -63,6 +63,6 @@ IC_ShandieDashWait_ReloadSettings()
     if(g_ShandieDashWaitUserSettings["WriteSettings"] := true)
     {
         g_ShandieDashWaitUserSettings.Delete("WriteSettings")
-        g_SF.WriteObjectToJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" , g_ShandieDashWaitUserSettings )   
+        g_SF.WriteObjectToJSON( A_LineFile . "\..\DashWaitSettings.json" , g_ShandieDashWaitUserSettings )   
     }     
 }

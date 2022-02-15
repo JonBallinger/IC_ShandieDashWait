@@ -1,4 +1,4 @@
-global g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" )
+global g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\DashWaitSettings.json" )
 
 class IC_ShandieDashWait_SharedFunctions_Class extends IC_BrivSharedFunctions_Class
 {
@@ -54,7 +54,7 @@ class IC_ShandieDashWait_SharedData_Class ;extends IC_SharedData_Class
 {
     ReloadShandieDashWaitSettings() {
         MsgBox "Shandie settings reloaded"
-        g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" )
+        g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\DashWaitSettings.json" )
         If !IsObject( g_ShandieDashWaitUserSettings )
         {
             g_ShandieDashWaitUserSettings := {}        
@@ -69,7 +69,7 @@ class IC_ShandieDashWait_SharedData_Class ;extends IC_SharedData_Class
         if(g_ShandieDashWaitUserSettings["WriteSettings"] := true)
         {
             g_ShandieDashWaitUserSettings.Delete("WriteSettings")
-            g_SF.WriteObjectToJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" , g_ShandieDashWaitUserSettings )   
+            g_SF.WriteObjectToJSON( A_LineFile . "\..\DashWaitSettings.json" , g_ShandieDashWaitUserSettings )   
         }
     }
 }
