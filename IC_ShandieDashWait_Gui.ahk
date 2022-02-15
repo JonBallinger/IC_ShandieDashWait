@@ -1,6 +1,6 @@
 IC_ShandieDashWait_ReloadSettings()
 
-g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\..\IC_ShandieDashWait\DashWaitSettings.json" )
+g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\DashWaitSettings.json" )
 
 GUIFunctions.AddTab("Shandie Dash Wait")
 
