@@ -5,6 +5,7 @@ g_ShandieDashWaitUserSettings := g_SF.LoadObjectFromJSON( A_LineFile . "\..\Dash
 GUIFunctions.AddTab("Shandie Dash Wait")
 
 Gui, ICScriptHub:Tab, Shandie Dash Wait
+GUIFunctions.UseThemeTextColor()
 
 Gui, ICScriptHub:Font, w700
 Gui, ICScriptHub:Add, Text, , Shandie Dash Wait Settings
