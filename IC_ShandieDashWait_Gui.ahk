@@ -59,7 +59,7 @@ IC_ShandieDashWait_ReloadSettings()
     if ( g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"] == "" )
         g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"] := 1
     
-    if(g_ShandieDashWaitUserSettings["WriteSettings"] := true)
+    if(g_ShandieDashWaitUserSettings["WriteSettings"] == true)
     {
         g_ShandieDashWaitUserSettings.Delete("WriteSettings")
         g_SF.WriteObjectToJSON( A_LineFile . "\..\DashWaitSettings.json" , g_ShandieDashWaitUserSettings )   
