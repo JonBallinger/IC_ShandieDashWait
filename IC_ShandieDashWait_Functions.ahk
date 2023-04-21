@@ -66,7 +66,7 @@ class IC_ShandieDashWait_SharedData_Class ;extends IC_SharedData_Class
         if ( g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"] == "" )
             g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"] := 1
         
-        if(g_ShandieDashWaitUserSettings["WriteSettings"] := true)
+        if(g_ShandieDashWaitUserSettings["WriteSettings"] == true)
         {
             g_ShandieDashWaitUserSettings.Delete("WriteSettings")
             g_SF.WriteObjectToJSON( A_LineFile . "\..\DashWaitSettings.json" , g_ShandieDashWaitUserSettings )   
