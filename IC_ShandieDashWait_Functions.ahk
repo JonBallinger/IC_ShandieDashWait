@@ -9,6 +9,7 @@ class IC_ShandieDashWait_SharedFunctions_Class extends IC_BrivSharedFunctions_Cl
         ShandieIsInFormation := this.IsChampInFormation( 47, this.Memory.GetCurrentFormation() )
         CurrentZone := this.Memory.ReadCurrentZone()
         Stacks := this.Memory.ReadSBStacks()
+        TargetStacks := g_BrivUserSettings[ "AutoCalculateBrivStacks" ] ? (g_BrivGemFarm.TargetStacks - g_BrivGemFarm.LeftoverStacks) : g_BrivUserSettings[ "TargetStacks" ]
         
 
         ; If no Shandie, just exit with false
@@ -35,7 +36,7 @@ class IC_ShandieDashWait_SharedFunctions_Class extends IC_BrivSharedFunctions_Cl
 
         ;MsgBox % "Stacks: " . Stacks . ", g_BrivUserSettings[ ""TargetStacks"" ]:" . g_BrivUserSettings[ "TargetStacks" ] . ", CurrentZone: " . CurrentZone . ", g_BrivUserSettings[ ""StackZone"" ]: " . g_BrivUserSettings[ "StackZone" ] . ", DashWaitPostStack: " . g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"]
         ; Then we check for Dash Wait post stack
-        if ( stacks > g_BrivUserSettings[ "TargetStacks" ] AND CurrentZone >= g_BrivUserSettings[ "StackZone" ] AND g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"]) {
+        if ( Stacks > TargetStacks AND CurrentZone >= g_BrivUserSettings[ "StackZone" ] AND g_ShandieDashWaitUserSettings["ShandieDashWaitPostStack"]) {
             ;MsgBox "Post Stack Dash Wait"
             return true
         }
